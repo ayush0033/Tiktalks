@@ -20,6 +20,17 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             Spacer(),
             Column(
               children: [
+                Container(
+                  child: Center(
+                    child: Text(
+                      'Temporarily Closed, Work In Progress',
+                      style: biggerTextStyle(),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
                 TextFormField(
                   validator: (val) {
                     return RegExp(
@@ -40,6 +51,16 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   },
                   style: simpleTextStyle(),
                   decoration: textFieldInputDecoration("Enter New Password"),
+                ),
+                TextFormField(
+                  obscureText: true,
+                  validator: (val) {
+                    return val.length > 6
+                        ? null
+                        : "Enter Password 6+ characters";
+                  },
+                  style: simpleTextStyle(),
+                  decoration: textFieldInputDecoration("Re-Enter New Password"),
                 ),
                 SizedBox(
                   height: 50,
@@ -67,7 +88,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                 ),
                 SizedBox(
-                  height: 150,
+                  height: 50,
                 ),
               ],
             ),

@@ -72,7 +72,13 @@ class _SignInState extends State<SignIn> {
                 children: [
                   Spacer(),
                   Container(
-                    child: Image.asset("assets/images/testlogo.png"),
+                    child: Text(
+                      'Hello ! Sign in to your account',
+                      style: loginoutTextStyle(),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
                   ),
                   Form(
                     key: formKey,
@@ -88,7 +94,7 @@ class _SignInState extends State<SignIn> {
                           },
                           controller: emailEditingController,
                           style: simpleTextStyle(),
-                          decoration: textFieldInputDecoration("email"),
+                          decoration: textFieldInputDecoration("Email"),
                         ),
                         TextFormField(
                           obscureText: true,
@@ -99,7 +105,7 @@ class _SignInState extends State<SignIn> {
                           },
                           style: simpleTextStyle(),
                           controller: passwordEditingController,
-                          decoration: textFieldInputDecoration("password"),
+                          decoration: textFieldInputDecoration("Password"),
                         ),
                       ],
                     ),
@@ -119,9 +125,9 @@ class _SignInState extends State<SignIn> {
                         },
                         child: Container(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 8),
+                                horizontal: 1, vertical: 8),
                             child: Text(
-                              "Forgot Password?",
+                              "Forgot Password ?",
                               style: simpleTextStyle(),
                             )),
                       )
@@ -159,13 +165,22 @@ class _SignInState extends State<SignIn> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print("Login With Google");
+                      print("Signin With Google");
                     },
                     child: Container(
                       padding: EdgeInsets.symmetric(vertical: 16),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          color: Colors.white),
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.redAccent[200],
+                              Colors.redAccent[100],
+                              //const Color(0xff007EF4),
+                              //const Color(0xff2A75BC)
+                            ],
+                          )),
+                      //color: Colors.red[100],
+
                       width: MediaQuery.of(context).size.width,
                       child: Text(
                         "Sign In with Google",

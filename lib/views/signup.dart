@@ -72,7 +72,13 @@ class _SignUpState extends State<SignUp> {
                 children: [
                   Spacer(),
                   Container(
-                    child: Image.asset("assets/images/testlogo.png"),
+                    child: Text(
+                      'Hello ! Sign up Now',
+                      style: loginoutTextStyle(),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
                   ),
                   Form(
                     key: formKey,
@@ -147,7 +153,14 @@ class _SignUpState extends State<SignUp> {
                     padding: EdgeInsets.symmetric(vertical: 16),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
-                        color: Colors.white),
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.redAccent[200],
+                            Colors.redAccent[100],
+                            //const Color(0xff007EF4),
+                            //const Color(0xff2A75BC)
+                          ],
+                        )),
                     width: MediaQuery.of(context).size.width,
                     child: Text(
                       "Sign Up with Google",

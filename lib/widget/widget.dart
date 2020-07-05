@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 Widget appBarMain(BuildContext context) {
   return AppBar(
     title: Center(
-        child: Image.asset(
-          "assets/images/testlogo.png",
-          height: 150,
-          width: 120,
-        ),
+      child: Image.asset(
+        "assets/images/testlogo.png",
+        height: 150,
+        width: 120,
+      ),
     ),
     elevation: 0.0,
     centerTitle: false,
@@ -30,4 +30,8 @@ TextStyle simpleTextStyle() {
 
 TextStyle biggerTextStyle() {
   return TextStyle(color: Colors.white, fontSize: 17);
+}
+
+TextStyle loginoutTextStyle() {
+  return TextStyle(color: Colors.white, fontSize: 20);
 }
